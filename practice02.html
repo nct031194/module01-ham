@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function square(a){
+            
+            return alert(a*a)
+        }
+
+        function dientichchuvihinhtron(bankinh){
+            return alert('dien tich hinh tron la ' + (3.14 * bankinh * bankinh) + ' chu vi la ' + (bankinh * 2 * 3.14))
+        }
+
+        function giaithua(a){
+            for(i = a -1 ; i > 0 ;i--){
+                a = a * i
+            }
+            return alert(a);
+        }
+
+        function checkNum(){
+            let num = prompt('Nhap vao 1 gia tri ');
+            if (isNaN(num)){
+                alert('false')
+            }
+            else {
+                alert('true')
+            }
+        }
+        
+
+        function checkMin(a,b,c){
+            if ( a < b && a < c){
+                return alert(a + ' nho nhat')
+            }
+            else if ( b < a && b < c){
+                return alert(b + ' nho nhat')
+            }
+            else {
+                return alert(c + ' nho nhat')
+            }
+        }
+
+        function checkNum1(a){
+            if (a > 0){
+                return alert(a + ' la so nguyen duong ')
+            }
+            else {
+                return alert('khong phai so nguyen duong')
+            }
+        }
+
+        
+        function swap(a,b){
+            return alert(b + ',' + a)
+        }
+
+        function Arrayinput(a){
+            let array = [];
+            let c = prompt('Nhap vao gia tri can tim')
+            array = Array.from(a);
+            array.reverse();
+            for ( i=0 ; i < array.length ; i++){
+            if (array[i] == c ){
+                console.log(c);
+            }
+        }
+
+            return array;
+        }
+    </script>
+</body>
+</html>

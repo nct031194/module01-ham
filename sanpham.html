@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <strong><label for="product"> ADD NEW PRODUCT</label></strong><br><br>
+    <input type="text" placeholder="Name of product"  id="product" name="productinput"> <button type="button" onclick="addProduct()">Add</button>
+    <br><br>
+    <strong><label> DISPLAY ALL PRODUCT</label></strong><br><br>
+    <!-- <table>
+        <tr>
+            <td>Product Name</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <p id="result"></p>
+    </table> -->
+    <table>
+        <tr>
+            <th>Display Name</th>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <p id="result"></p>
+    <script>
+        let product = [1,2,3,4,5,6];
+        let list = document.getElementById('result');
+        let b = ''
+        function addProduct(){
+            let a =  document.getElementById('product').value
+            let b = ''
+            for (i=0 ; i < product.length ; i++){
+            if (product[i] == a){
+                return alert('Your product is already in list !');
+            }
+            }
+            alert('You added ' + a + ' to list')
+            product.push(a)
+            for (i=0;i<product.length;i++){
+            b += "<table><tr><th> " + product[i] + " </th><td><button type='button' onclick='edit("+i+")'>Edit</button></td><td><button type='button' onclick='deleted("+i+")'>Delete</button></td></tr></table>"
+            }
+            list.innerHTML = b
+            return product;
+        }
+        
+
+        function deleted(id){
+            b='';
+            product.splice(id,1)
+            for (i=0;i<product.length;i++){
+                b += "<table><tr><th> " + product[i] + " </th><td><button type='button' onclick='edit("+i+")'>Edit</button></td><td><button type='button' onclick='deleted("+i+")'>Delete</button></td></tr></table>"
+            }
+            return list.innerHTML = b
+        }
+
+        function edit(id){
+            b='';
+            product[id] = prompt('Enter New Product:')
+            for (i=0;i<product.length;i++){
+                b += "<table><tr><th> " + product[i] + " </th><td><button type='button' onclick='edit("+i+")'>Edit</button></td><td><button type='button' onclick='deleted("+i+")'>Delete</button></td></tr></table>"
+            }
+            return list.innerHTML = b
+        }
+    </script>
+    <style>
+        th{
+            width: 200px;
+            text-align: left;
+            font-weight: bold;
+        }
+        td{
+            width: 50px;
+        }
+
+    </style>
+</body>
+</html>
